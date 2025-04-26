@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TalentTag - Inicio</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+        darkMode: 'class'
+        }
+    </script>
+</head>
+
+<!-- Contenido principal -->
+<body class=" flex-col min-h-screen dark:bg-gray-800 text-gray-700 dark:text-gray-100 transition-colors duration-300">
+    
+<!-- Barra de navegación (Navigation Bar) -->
+<nav class=" dark:bg-gray-700 shadow-md navbar max-w-7xl mx-auto  items-center py-1 transition-colors">
+    <div class="flex items-center space-x-6 ">
+
+    <!-- Logo -->
+    <a href="index.html" class="logo-link">
+        <img src="Logos/Logo TT.png" alt="Logo" class="w-14">
+    </a>
+
+    <!-- Links de navegacion -->
+<ul class=" space-x-6 font-bold-medium ">
+        <div class="left-side"> 
+            <li><a href="index.html" class="hover:text-cyan-900 transition">Inicio</a></li>
+            <li><a href="crea.html" class="hover:text-cyan-800  transition">Crea</a></li>
+            <li><a href="precios.html" class="hover:text-cyan-800 transition">Precios</a></li>
+            <li><a href="soporte.html" class="hover:text-cyan-800 transition">Soporte</a></li>
+    </ul>
+    </div>
+
+    <!-- Botón de iniciar sesión -->
+    <div class="  space-x-7 ">              
+        <a href="Iniciar sesion.html" class="btn-iniciar-sesion bg-cyan-400 text-gray-700 dark:text-gray-700 hover:cyan-700 rounded-md transition  font-bold duration-300">
+        Iniciar sesión
+    </a>
+    <!-- Botón de modo nocturno -->
+    <button id="darkModeToggle" class="px-2 py-2 bg-gray-700 dark:bg-white shadow-lg-white-500 rounded-full hover:bg-gray-900 transition" aria-label="Modo oscuro">
+        
+    </button>
+    </div>
+</nav>
+</header>
+
+<div class="relative w-full mt-20 mx-auto flex justify-center dark:bg-gray-800 ">
+
+
+
+
+
+
+    
+<!-- Contenido centrado con ancho máximo -->
+<section 
+class="bg-white shadow-lg rounded-lg p-7 text-center w-full max-w-6xl dark:bg-gray-600 "
+    id="contenido">
+
+<main class="max-w-7xl mx-auto px-6 py-6">
+    <section class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-gray-700 dark:text-gray-200  mb-6  ">Planes y Precios</h2>
+        <p class="text-lg ">Descubre el plan que mejor se adapta a ti. Puedes cambiarlo en cualquier momento.</p>
+    </section>
+
+    
+    <div class="pricing-toggle-container flex flex-col items-center ">
+
+    <input type="radio" name="pricing-period" id="period-mensual" class="period-radio" checked>
+    <input type="radio" name="pricing-period" id="period-semestral" class="period-radio">
+    <input type="radio" name="pricing-period" id="period-anual" class="period-radio">
+
+    <div class="plan-toggle-css  ">
+        <label for="period-mensual"   class="toggle-label">Mensual</label>
+        <label for="period-semestral" class="toggle-label">Semestral</label>
+        <label for="period-anual" class="toggle-label">Anual</label>
+    </div>
+</div>
+
+        
+
+                <div class="pricing-cards">
+                    <!-- Plan Gratuito -->
+                    <div class="plan-card">
+                    <h3>Plan Gratuito</h3>
+                    <p class="plan-subtitle">¡Empieza ahora!</p>
+                    <div class="price"
+                        data-price-mensual="0"
+                        data-price-semestral="0"
+                        data-price-anual="0">
+                        Gratis
+                    </div>
+                    <p class="plan-description">Ideal para comenzar sin compromiso</p>
+                    <h4>Beneficios:</h4>
+                    <ul>
+                        <li><span class="check-icon">✔</span> 1 Portafolio disponible</li>
+                        <li><span class="check-icon">✔</span> Acceso a planillas básicas</li>
+                        <li><span class="check-icon">✔</span> Enlaces profesionales</li>
+                    </ul>
+                    <div class="free-plan-check">
+                        <span class="big-check-icon">✔</span>
+                    </div>
+                    </div>
+                
+                    <!-- Plan Pro -->
+                    <div class="plan-card recommended">
+                        <span class="recommend-badge">Recomendado</span>
+                        <h3>Plan Pro</h3>
+                        <div class="price" 
+                            data-price-mensual="19900" 
+                            data-price-semestral="99000" 
+                            data-price-anual="179900">
+                            $19.900 COP
+                        </div>
+                        <p class="plan-description">Perfecto para profesionales activos.</p>
+                    <h4>Beneficios:</h4>
+                    <ul>
+                        <li><span class="check-icon">✔</span> Portafolios ilimitados</li>
+                        <li><span class="check-icon">✔</span> Acceso a TODAS las plantillas</li>
+                        <li><span class="check-icon">✔</span> Estadísticas básicas del portafolio</li>
+                        <li><span class="check-icon">✔</span> Soporte prioritario</li>
+                    </ul>
+                    <a href="#" class="cta-button">Usar este plan</a>
+                    </div>
+                
+                    <!-- Plan Premium -->
+                    <div class="plan-card">
+                    <h3>Plan Premium</h3>
+                    <p class="plan-subtitle">Empresas / Equipos</p>
+                    <div class="price"
+                        data-price-mensual="59900"
+                        data-price-semestral="299900"
+                        data-price-anual="499900">
+                        $59.900 COP
+                    </div>
+                    <p class="plan-description">La opción más completa para equipos</p>
+                    <h4>Beneficios:</h4>
+                    <ul>
+                        <li><span class="check-icon">✔</span> Todo lo del plan Pro</li>
+                        <li><span class="check-icon">✔</span> Gestión de equipos</li>
+                        <li><span class="check-icon">✔</span> Herramientas colaborativas</li>
+                        <li><span class="check-icon">✔</span> Reportes avanzados</li>
+                        <li><span class="check-icon">✔</span> Soporte personalizado</li>
+                    </ul>
+                    <a href="#" class="cta-button">Usar este plan</a>
+                    </div>
+                </div>
+            
+
+<!-- Footer de la página -->
+<footer class="bg-white dark:bg-gray-600 text-center p-16  text-gray-500 dark:text-gray-200 transition flex">
+    <div class="container mx-auto px- py-8 grid grid-cols-3 gap-8 items-center text-center md:text-center">
+
+    <!-- Sección izquierda: Nombre y redes -->
+    <div class="space-y-2">
+        <h2 class="text-3xl font-bold text-gray-700 dark:text-gray-100 py-15 mb-6 ">
+
+            <span class="text-cyan-400">Talen</span>Tag.com
+        </h2>
+    <div class="flex justify-center  space-x-7">
+        <a href="#" aria-label="Facebook">
+            <img src="Logos/Logo Facebook.png" alt="Facebook" class="h-9 w-auto">
+        </a>
+        <a href="#" aria-label="WhatsApp">
+            <img src="Logos/Logo Whatsapp.png" alt="WhatsApp" class="h-9 w-auto">
+        </a>
+        <a href="#" aria-label="X">
+            <img src="Logos/Logo X.png" alt="X" class="h-9 w-auto">
+        </a>
+    </div>
+    </div>
+
+    <!-- Sección central: Logo -->
+    <div>
+    <a href="Index.html" aria-label="Inicio">
+        <img src="Logos/Logo TT.png" alt="Logo TalentTag" class="h-17 w-16 mx-auto ">
+    </a>
+    </div>
+
+    <!-- Sección derecha: Links -->
+    <div class="space-y-2">
+        <ul class="text-white-900 font-medium space-y-2">
+            <li><a href="Index.html" class="font-bold">Inicio</a></li>
+            <li><a href="Crea.html">Crea tu Portafolio</a></li>
+            <li><a href="Precios.html">Precios</a></li>
+            <li><a href="Soporte.html">Soporte</a></li>
+        </ul>
+    </div>
+    </div>
+</footer>
+
+
+</section>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const radios = document.querySelectorAll('input[name="pricing-period"]');
+        const prices = document.querySelectorAll('.price');
+    
+        radios.forEach(radio => {
+            radio.addEventListener('change', () => {
+                const period = radio.id.split('-')[1]; // mensual, semestral, anual
+                prices.forEach(priceEl => {
+                    const value = priceEl.dataset[`price${capitalize(period)}`];
+                    if (value === "0") {
+                        priceEl.textContent = "Gratis";
+                    } else {
+                        priceEl.textContent = `$${Number(value).toLocaleString('es-CO')} COP`;
+                    }
+                });
+            });
+        });
+    
+        function capitalize(str) {
+            return str.charAt(0).toUpperCase() + str.slice(1);
+        }
+    });
+    </script>
+    
+
+<script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+    
+            // ==== MODO OSCURO ====
+            const toggleBtn = document.getElementById('darkModeToggle');
+            const html = document.documentElement;
+    
+            // Cargar preferencia del usuario
+            const themeGuardado = localStorage.getItem("theme");
+            if (themeGuardado === "dark") {
+                html.classList.add("dark");
+            }
+    
+            // Función para actualizar el icono del botón
+            function actualizarIcono() {
+                toggleBtn.textContent = html.classList.contains('dark') ? '🌞' : '🌙';
+            }
+    
+            actualizarIcono(); // Al iniciar
+    
+            // Evento de clic
+            toggleBtn.addEventListener("click", () => {
+                html.classList.toggle("dark");
+                const nuevoTema = html.classList.contains("dark") ? "dark" : "light";
+                localStorage.setItem("theme", nuevoTema);
+                actualizarIcono();
+            });
+        });
+    </script>
+
+    
+</body>
+
+
+</html>

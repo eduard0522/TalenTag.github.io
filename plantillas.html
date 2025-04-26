@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TalentTag - Inicio</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+        darkMode: 'class'
+        }
+    </script>
+</head>
+
+<!-- Contenido principal -->
+<body class=" flex-col min-h-screen dark:bg-gray-800 text-gray-700 dark:text-gray-100 transition-colors duration-300">
+    
+<!-- Barra de navegación (Navigation Bar) -->
+<nav class=" dark:bg-gray-700 shadow-md navbar max-w-7xl mx-auto  items-center py-1 transition-colors">
+    <div class="flex items-center space-x-6 ">
+
+    <!-- Logo -->
+    <a href="index.html" class="logo-link">
+        <img src="Logos/Logo TT.png" alt="Logo" class="w-14">
+    </a>
+
+    <!-- Links de navegacion -->
+<ul class=" space-x-6 font-bold-medium ">
+        <div class="left-side"> 
+            <li><a href="index.html" class="hover:text-cyan-900 transition">Inicio</a></li>
+            <li><a href="crea.html" class="hover:text-cyan-800  transition">Crea</a></li>
+            <li><a href="precios.html" class="hover:text-cyan-800 transition">Precios</a></li>
+            <li><a href="soporte.html" class="hover:text-cyan-800 transition">Soporte</a></li>
+    </ul>
+    </div>
+
+    <!-- Botón de iniciar sesión -->
+    <div class="  space-x-7 ">              
+        <a href="Iniciar sesion.html" class="btn-iniciar-sesion bg-cyan-400 text-gray-700 dark:text-gray-700 hover:cyan-700 rounded-md transition  font-bold duration-300">
+        Iniciar sesión
+    </a>
+    <!-- Botón de modo nocturno -->
+    <button id="darkModeToggle" class="px-2 py-2 bg-gray-700 dark:bg-white shadow-lg-white-500 rounded-full hover:bg-gray-900 transition" aria-label="Modo oscuro">
+        
+    </button>
+    </div>
+</nav>
+</header>
+
+
+    <!-- Contenido principal -->
+     
+    <main class="container mx-auto mt-5 px-4">
+    <h1 class="text-3xl font-bold text-center">Selecciona una Plantilla</h1>
+    <p class="mt-8 text-center text-gray-700">Elige entre diseños para <strong>Comunicaciones</strong> o <strong>Sistemas</strong> y crea un portafolio que se ajuste a tu perfil.</p>
+
+    <!-- Sección de plantillas -->
+    <div class="flex flex-col md:flex-row gap-8 mt-8 justify-center">
+        <!-- Plantilla Comunicaciones -->
+        <div class="plantilla bg-white shadow-md rounded-lg p-4 w-full md:w-1/2">
+        <h2 class="text-xl font-bold mb-2 text-blue-600">Plantilla para Comunicaciones</h2>
+        <img src="plantillas/comunicaciones.jpg" alt="Plantilla Comunicaciones" class="rounded-lg shadow-md w-full">
+        <p class="mt-2 text-gray-700">Diseño moderno y creativo para profesionales de comunicaciones.</p>
+        <button class="btn-primary mt-4 w-full">Seleccionar</button>
+        </div>
+        <!-- Plantilla Sistemas -->
+        <div class="plantilla bg-white shadow-md rounded-lg p-4 w-full md:w-1/2">
+        <h2 class="text-xl font-bold mb-2">Plantilla para Sistemas</h2>
+        <img src="plantillas/sistemas.jpg" alt="Plantilla Sistemas" class="rounded-lg shadow-md w-full">
+        <p class="mt-2 text-gray-700">Diseño profesional y funcional para ingenieros y desarrolladores.</p>
+        <button class="btn-primary mt-4 w-full">Seleccionar</button>
+        </div>
+    </div>
+    </main>
+
+
+</section>
+<!-- Pie de página -->
+<footer class="mt-10 p-4 text-gray-600">
+    <p>&copy; 2025 TalentTag. Todos los derechos reservados.</p>
+</footer>
+</body>
+</html>

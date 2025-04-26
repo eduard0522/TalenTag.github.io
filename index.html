@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TalentTag - Inicio</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+        darkMode: 'class'
+        }
+    </script>
+</head>
+
+
+<!-- Contenido principal -->
+<body class=" flex-col min-h-screen dark:bg-gray-800 text-gray-700 dark:text-gray-100 transition-colors duration-300">
+    
+<!-- Barra de navegación (Navigation Bar) -->
+<nav class=" dark:bg-gray-700 shadow-md navbar max-w-7xl mx-auto  items-center py-1 transition-colors">
+    <div class="flex items-center space-x-6 ">
+
+    <!-- Logo -->
+    <a href="index.html" class="logo-link">
+        <img src="Logos/Logo TT.png" alt="Logo" class="w-14">
+    </a>
+    
+    
+    
+
+    <!-- Links de navegacion -->
+<ul class=" space-x-6 font-bold-medium ">
+        <div class="left-side"> 
+            <li><a href="index.html" class="hover:text-cyan-900 transition">Inicio</a></li>
+            <li><a href="crea.html" class="hover:text-cyan-800  transition">Crea</a></li>
+            <li><a href="precios.html" class="hover:text-cyan-800 transition">Precios</a></li>
+            <li><a href="soporte.html" class="hover:text-cyan-800 transition">Soporte</a></li>
+    </ul>
+    </div>
+
+    <!-- Botón de iniciar sesión -->
+    <div class="  space-x-7 ">              
+        <a href="Iniciar sesion.html" class="btn-iniciar-sesion bg-cyan-400 text-gray-700 dark:text-gray-700 hover:cyan-700 rounded-md transition  font-bold duration-300">
+        Iniciar sesión
+    </a>
+    <!-- Botón de modo nocturno -->
+    <button id="darkModeToggle" class="px-2 py-2 bg-gray-700 dark:bg-white shadow-lg-white-500 rounded-full hover:bg-gray-900 transition" aria-label="Modo oscuro">
+        
+    </button>
+    </div>
+</nav>
+</header>
+
+
+
+
+
+
+
+
+
+<div class="relative w-full mt-20 mx-auto flex justify-center dark:bg-gray-800 ">
+    <!-- Contenido centrado con ancho máximo -->
+    <section 
+    class="bg-white shadow-lg rounded-lg p-7 text-center w-full max-w-6xl dark:bg-gray-600 "
+        id="contenido">
+
+    <!-- Título principal -->
+        <h2 class="text-4xl font-bold text-gray-700 dark:text-gray-200 py-15 mb-6 mt-7">
+            ¿Qué tipo de Portafolio te gustaría Crear?
+        </h2>
+
+    <!-- Subtítulo -->
+    <p class="text-gray-600 dark:text-gray-100 text-lg mp-6 mb-2">
+
+            Selecciona la opción que mejor se adapte a tus necesidades y gustos.
+        </p>
+        <p class="text-gray-600 dark:text-gray-100 text-lg mb-2">
+
+            ¡Comienza a crear tu portafolio profesional ahora!
+        </p>
+
+<!-- Contenedor del Carrusel a pantalla completa -->
+<div class="w-full flex justify-center border-color-cyan-400 border-3px">
+    <div class="w-full max-w-5xl overflow-hidden rounded-lg  mt-4 relative aspect-[16/6]">
+
+    <!-- Carrusel -->
+    <div id="carousel" class="flex transition-transform duration-700 ease-in-out w-full h-full">
+        <img 
+            src="Imagenes/image2.jpg" 
+            class="min-w-full h-full object-cover object-center brightness-80 transition-all duration-500"  
+            alt="Carrusel"
+        > 
+        <img 
+            src="Imagenes/image3.jpg" 
+            class="min-w-full h-full object-cover object-center brightness-80 transition-all duration-500"  
+            alt="Carrusel"
+        > 
+        <img 
+            src="Imagenes/image4.jpg" 
+            class="min-w-full h-full object-cover object-center brightness-80 transition-all duration-500"  
+            alt="Carrusel"
+        > 
+        <img 
+            src="Imagenes/image5.jpg" 
+            class="min-w-full h-full object-cover object-center brightness-80 transition-all duration-500"  
+            alt="Carrusel"
+        > 
+    </div>
+
+
+    
+
+    <!-- Botones de navegación -->
+    <button id="prevBtn" 
+        class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white/70 hover:bg-cyan-500 text-gray-700 hover:text-white font-bold p-2 rounded-full shadow-lg transition-all duration-300 ease-in-out scale-100 hover:scale-110">
+        ‹
+    </button>
+
+    <button id="nextBtn" 
+        class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white/70 hover:bg-cyan-500 text-gray-700 hover:text-white font-bold p-2 rounded-full shadow-lg transition-all duration-300 ease-in-out scale-100 hover:scale-110">
+        ›
+    </button>
+    </div>
+</div>
+
+    <!-- Frases -->
+    <div class="mt-6 text-lg space-y-2 dark:bg-gray-#">
+        <p class="text-gray-600 dark:text-gray-100 text-lg mt-6 text-lg text-gray-700">
+            "Crea tu portafolio profesional en minutos, sin complicaciones ni conocimientos técnicos."
+        </p>
+        <p class="text-gray-600 dark:text-gray-100 text-lg mt-0 text-lg text-gray-700">
+            "Muestra tu creatividad: Diseña, personaliza y comparte un portafolio único que refleje tu estilo."
+        </p>
+        <p class="text-gray-600 dark:text-gray-100 text-lg mt-0 text-lg text-gray-700">
+            "Ahorra tiempo y sorprende con un portafolio profesional que hable por ti."
+        </p>
+
+    <!-- CTA: Botón de creación de portafolio -->
+        <div class="py-# bg-#- text-white py-6 px-4 rounded-md shadow-md transition  ease-in-out">
+            <div class="max-w-8xl mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold text-gray-700 dark:text-gray-100 py-15 mb-8">
+                ¿Listo para destacar ?
+            </h2>
+            <a href="Crea.html" class="inline-block bg-cyan-400 text-gray-700 text-lg font-semibold px-7 py-4 rounded-md shadow hover:bg-cyan-500  ">
+                🚀 Crea tu portafolio ahora
+            </a>
+            </div>
+        </div>
+    </div>
+    <div>   
+    </div>
+
+
+<!-- Footer de la página -->
+<footer class="bg-white dark:bg-gray-600 text-center p-4 text-sm text-gray-500 dark:text-gray-200 transition">
+    <div class="container mx-auto px-4 py-8 grid grid-cols-3 gap-8 items-center text-center md:text-center">
+
+    <!-- Sección izquierda: Nombre y redes -->
+    <div class="space-y-2">
+        <h2 class="text-3xl font-bold text-gray-700 dark:text-gray-100 py-15 mb-6">
+
+            <span class="text-cyan-400">Talen</span>Tag.com
+        </h2>
+    <div class="flex justify-center md:justify-center space-x-6">
+        <a href="#" aria-label="Facebook">
+            <img src="Logos/Logo Facebook.png" alt="Facebook" class="h-9 w-auto">
+        </a>
+        <a href="#" aria-label="WhatsApp">
+            <img src="Logos/Logo Whatsapp.png" alt="WhatsApp" class="h-9 w-auto">
+        </a>
+        <a href="#" aria-label="X">
+            <img src="Logos/Logo X.png" alt="X" class="h-9 w-auto">
+        </a>
+    </div>
+    </div>
+
+    <!-- Sección central: Logo -->
+    <div>
+    <a href="Index.html" aria-label="Inicio">
+        <img src="Logos/Logo TT.png" alt="Logo TalentTag" class="h-17 w-16 mx-auto ">
+    </a>
+    </div>
+
+    <!-- Sección derecha: Links -->
+    <div class="space-y-2">
+        <ul class="text-white-900 font-medium space-y-2">
+            <li><a href="index.html" class="font-bold">Inicio</a></li>
+            <li><a href="Crea.html">Crea tu Portafolio</a></li>
+            <li><a href="Precios.html">Precios</a></li>
+            <li><a href="Soporte.html">Soporte</a></li>
+        </ul>
+    </div>
+    </div>
+</footer>
+
+</section>
+</div>
+
+        <!-- Texto de derechos -->
+        <div class="text-center text-sm text-gray-400 mt-8">
+        © 2025 TalentTag.com. Todos los derechos reservados.
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // ==== CARRUSEL ====
+            const carousel = document.getElementById('carousel');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const slides = carousel?.children || [];
+            let currentIndex = 0;
+    
+            function updateCarousel() {
+                const offset = -currentIndex * 100;
+                carousel.style.transform = `translateX(${offset}%)`;
+            }
+    
+            if (nextBtn && prevBtn && carousel) {
+                nextBtn.addEventListener('click', () => {
+                    currentIndex = (currentIndex + 1) % slides.length;
+                    updateCarousel();
+                });
+    
+                prevBtn.addEventListener('click', () => {
+                    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                    updateCarousel();
+                });
+    
+                setInterval(() => {
+                    nextBtn.click();
+                }, 6000);
+            }
+    
+            // ==== MODO OSCURO ====
+            const toggleBtn = document.getElementById('darkModeToggle');
+            const html = document.documentElement;
+    
+            // Cargar preferencia del usuario
+            const themeGuardado = localStorage.getItem("theme");
+            if (themeGuardado === "dark") {
+                html.classList.add("dark");
+            }
+    
+            // Función para actualizar el icono del botón
+            function actualizarIcono() {
+                toggleBtn.textContent = html.classList.contains('dark') ? '🌞' : '🌙';
+            }
+    
+            actualizarIcono(); // Al iniciar
+    
+            // Evento de clic
+            toggleBtn.addEventListener("click", () => {
+                html.classList.toggle("dark");
+                const nuevoTema = html.classList.contains("dark") ? "dark" : "light";
+                localStorage.setItem("theme", nuevoTema);
+                actualizarIcono();
+            });
+        });
+    </script>
+    
+    </body>
+</html>

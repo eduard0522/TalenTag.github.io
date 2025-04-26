@@ -1,0 +1,688 @@
+/* Estilos generales */
+
+:root {
+    --color-bg-light: #f8f9fa;
+    --color-bg-dark: #ffffff;
+    --color-text-light: #303030;
+    --color-accent: #00bfff;
+    --color-accent-hover: #00bfff;
+    --color-dark-hover: #1f1f1f;
+}
+
+/* ==================================================
+Globales y Transiciones
+================================================== */
+
+* {
+    box-sizing: border-rounded;
+    margin: 0;
+    padding: 0;
+}
+
+body,
+.navbar,
+.form-container,
+.carousel-container,
+footer,
+input,
+.btn-primary,
+.btn-secondary {
+    transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--color-bg-light);
+    color: var(--color-text-light);
+}
+
+#darkModeToggle {
+    transition: transform 0.3s ease;
+}
+#darkModeToggle:active {
+    transform: rotate(180deg);
+}
+
+
+/* ==================================================
+    Navegación
+   ================================================== */
+
+@media (max-width: 576px) {
+    .form-container {
+        padding: 15px;
+    }
+
+    .form-title {
+        font-size: 22px;
+    }
+
+    .main-text h1 {
+        font-size: 1.75rem;
+    }
+
+    .main-text p {
+        font-size: 1rem;
+    }
+}
+
+    .navbar {
+    background-color: white; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    padding: 15px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-sizing: border-box;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 100%; 
+    border-radius: 20px;
+    }
+
+    .navbar a:hover:not(.logo-link) {
+        background-color: var(--color-accent-hover);
+    }
+    
+
+    .left-side {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    }
+
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+    width: 100%;
+    }
+
+.navbar a {
+    color: var(--color-text-white);
+    font-weight: bold;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+
+.navbar ul a:hover {
+    background-color: var(--color-accent-hover);
+}
+
+/* ==================================================
+    Logo Barra
+   ================================================== */
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-link {
+    display: inline-block;
+    transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+    transform: scale(1.02)
+}
+
+.logo-link:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+/* ==================================================
+    Botones
+   ================================================== */
+
+.btn, 
+.btn-primary, 
+.btn-secondary {
+    background-color: var(--color-accent);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+}
+
+.btn:hover, 
+.btn-primary:hover, 
+.btn-secondary:hover {
+    background-color: var(--color-accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 191, 255, 0.3);
+    animation: bounce 0.3s ease;
+
+}
+
+
+
+/* ==================================================
+Animaciones
+================================================== */
+
+.fade-in {
+animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+from {
+    opacity: 0;
+    transform: translateY(10px);
+}
+to {
+    opacity: 1;
+    transform: translateY(0);
+}
+}
+
+
+
+
+/* =================================
+    Lógica del Toggle con CSS Puro
+   ================================= */
+
+/* 1. Ocultar los inputs de radio reales */
+.period-radio {
+    position: absolute; /* Fuera del flujo normal */
+    opacity: 0; /* Completamente transparente */
+    width: 0; /* Sin ancho */
+    height: 0; /* Sin alto */
+}
+
+/* 2. Estilo del contenedor visual del toggle */
+.plan-toggle-css {
+    background-color: #22CCED; /* Fondo oscuro solicitado */
+    border-radius: 40px; /* Bordes redondeados */
+    display: inline-flex; /* Elementos internos en línea */
+    padding: 15px; /* Pequeño espacio interno */
+    margin-bottom: 30px; /* Espacio debajo del toggle */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+/* 3. Estilo de las etiquetas que actúan como botones */
+.toggle-label {
+    background-color: transparent; /* Fondo transparente por defecto */
+    color: #0b151f; /* Color de texto gris claro (inactivo) */
+    padding: 10px 80px; /* Espaciado interno */
+    border-radius: 40px; /* Bordes redondeados */
+    cursor: pointer; /* Indica que es clickeable */
+    font-size: 1em;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Animación suave */
+    display: inline-block; /* Para aplicar padding correctamente */
+}
+
+/* 4. Efecto Hover: Texto Turquesa */
+.toggle-label:hover {
+     color: #00000091; /* Texto se vuelve turquesa */
+}
+
+/* 5. Estilo del botón ACTIVO (basado en el radio :checked) */
+/* Se usa el selector de hermano general (~) para aplicar estilo a la etiqueta */
+/* correspondiente al radio que esté seleccionado */
+#period-mensual:checked ~ .plan-toggle-css label[for="period-mensual"],
+#period-semestral:checked ~ .plan-toggle-css label[for="period-semestral"],
+#period-anual:checked ~ .plan-toggle-css label[for="period-anual"] {
+    background-color: #78e9ff; /* Fondo gris medio */
+    color: #000000 ; /* Texto blanco. !important para asegurar prioridad sobre hover */
+    cursor: default; /* Cursor normal en el activo */
+}
+
+
+/* ==============================================
+    Lógica para Mostrar/Ocultar Contenido con CSS
+   ============================================== */
+
+/* 1. Ocultar todos los bloques de contenido por defecto */
+.pricing-content {
+    display: none;
+}
+
+/* 2. Mostrar SÓLO el bloque de contenido correspondiente al radio :checked */
+/* Se usa el selector de hermano general (~) para encontrar el wrapper */
+/* y luego el ID específico del contenido a mostrar */
+#period-mensual:checked ~ .pricing-content-wrapper #content-mensual,
+#period-semestral:checked ~ .pricing-content-wrapper #content-semestral,
+#period-anual:checked ~ .pricing-content-wrapper #content-anual {
+    display: block; /* Muestra el bloque correcto */
+    /* Nota: Si .pricing-cards usa flex, podrías necesitar display:flex aquí */
+    /* pero como .pricing-cards está DENTRO de .pricing-content, display:block está bien */
+}
+
+
+/* =================================
+    Estilos de las Tarjetas de Precios
+   ================================= */
+
+/* Contenedor de las tarjetas */
+.pricing-cards {
+    display: flex; /* Coloca las tarjetas en fila */
+    justify-content: center; /* Centra las tarjetas horizontalmente */
+    gap: 20px; /* Espacio entre tarjetas */
+    margin-top: 30px; /* Espacio sobre las tarjetas */
+    
+}
+
+/* Estilo base de cada tarjeta */
+.plan-card {
+    background-color: #202d3a; /* Fondo oscuro */
+    padding: 30px 30px; /* Espaciado interno */
+    border-radius: 20px; /* Bordes redondeados */
+    width: 336px; /* Ancho fijo */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Sombra */
+    display: flex; /* Para usar flexbox internamente */
+    flex-direction: column; /* Organiza contenido en columna */
+    text-align: left; /* Alinea texto a la izquierda */
+    position: relative; /* Para posicionar el badge "Recomendado" */
+    transition: transform 0.3s ease; /* Animación al pasar el ratón */
+}
+.plan-card:hover {
+     transform: translateY(-6px); /* Efecto de elevación */
+}
+
+/* Estilos de texto dentro de la tarjeta */
+.plan-card h3 {
+    font-size: 2.0em;
+    margin-top: 0em;
+    margin-bottom: 5px; /*espacio entre el texto y el subtitulo*/
+    color: #E0E0E0; /* Blanco color de prototipo*/
+    font-weight: bold; /* Negrita */
+}
+.plan-card .plan-subtitle{
+     font-size: 1.2em; /* Pequeño */
+     color: #E0E0E0; /* Gris claro */
+    margin-bottom: 20px;
+     min-height: 1.2em; /* Reserva espacio */
+    margin-top: 0px;
+}
+.plan-card .price {
+    font-size: 2.8em; /* Grande */
+    font-weight: bold; /* Negrita */
+    color: #fff; /* Blanco */
+    margin-bottom: 10px;
+    
+}
+.plan-card .plan-description {
+    font-size: 1.1em;
+    color: #E0E0E0; /* Texto claro */
+    margin-bottom: 25px;
+    min-height: 0.1em; /* Reserva espacio */
+margin-top: 10px;
+}
+.plan-card h4 { /* Título "Beneficios:" */
+    font-size: 1.5em;
+    color: #fff; /* Blanco */
+    margin-bottom: 15px;
+    
+}
+
+/* Estilos de la lista de beneficios */
+.plan-card ul {
+    list-style: none; /* Quita puntos de lista */
+    padding: 0; /* Quita padding por defecto */
+    margin: 0 0 30px 0; /* Margen inferior */
+    flex-grow: 1; /* Ocupa espacio vertical disponible */
+}
+
+.plan-card ul li {
+    margin-bottom: 15px; /* Espacio entre beneficios */
+    display: flex; /* Alinea icono y texto */
+    align-items: center; /* Centra verticalmente icono y texto */
+    font-size: 0.90em;
+    color: #ced4da; /* Texto claro */
+    line-height: 1.4; /* Espacio entre líneas */
+}
+
+/* Estilo del icono check (emoji) */
+.check-icon {
+    color: #22CCED;       /* Color turquesa solicitado */
+    margin-right: 10px;  /* Espacio a la derecha */
+    font-size: 1.1em;    /* Tamaño */
+}
+
+/* Estilo del check grande en Plan Gratuito */
+.free-plan-check {
+    text-align: center;
+}
+.big-check-icon {
+    display: inline-block;
+    font-size: 2.2em;
+    color: #534e4e; /* Check blanco */
+    background-color: #1DD952; /* Fondo verde */
+    border-radius: 50%; /* Círculo */
+    width: 50px;
+    height: 50px;
+    line-height: 50px; /* Centra el check verticalmente */
+    text-align: center;
+}
+
+/* =================================
+    Botón de Acción (CTA)
+   ================================= */
+.cta-button {
+    display: block; /* Ocupa ancho completo */
+    background-color: #22CCED; /* Color turquesa solicitado */
+    color: #2e2c2c; /* Texto blanco */
+    text-align: center;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none; /* Sin subrayado */
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-top: auto; /* Empuja al final de la tarjeta */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Animaciones */
+    border: none; /* Sin borde */
+    cursor: pointer;
+}
+.cta-button:hover {
+    background-color: #1ba8c4; /* Turquesa más oscuro */
+    transform: scale(1.03); /* Efecto zoom ligero */
+}
+
+/* =================================
+Badge "Recomendado"
+================================= */
+.plan-card.recommended {
+    border: 2px solid #22CCED; /* Borde turquesa */
+}
+.recommend-badge {
+position: absolute; /* Posicionamiento sobre la tarjeta */
+top: -15px; /* Mitad fuera */
+left: 50%; /* Centrado horizontal */
+transform: translateX(-50%); /* Ajuste fino del centrado */
+background-color: #22CCED; /* Fondo turquesa */
+color: #3e494e; /* Texto blanco */
+padding: 10px 20px;
+border-radius: 10px;
+font-size: 1.0em;
+font-weight: bold;
+}
+
+
+/* =================================
+Media Queries (Responsividad)
+================================= */
+@media (max-width: 992px) {
+    /* Para 2 tarjetas por fila en pantallas medianas */
+    .plan-card {
+        width: calc(50% - 40px); /* 50% menos el gap/2 en cada lado */
+    }
+}
+@media (max-width: 768px) {
+    /* Ajustes para tablets */
+    .pricing-cards {
+        gap: 20px; /* Reduce espacio entre tarjetas */
+    }
+    .plan-toggle-css { /* Hacer el toggle más adaptable */
+        display: flex;
+        width: 90%;
+        max-width: 400px; /* Limitar ancho máximo */
+        justify-content: center;
+    }
+    .toggle-label { /* Ajustar padding y fuente en toggle */
+        padding: 8px 15px;
+        font-size: 0.9em;
+        flex-grow: 1; /* Ocupan espacio disponible */
+        text-align: center; /* Centrar texto */
+    }
+}
+@media (max-width: 600px) {
+    /* Para móviles: apilar tarjetas */
+    .pricing-cards {
+        flex-direction: column; /* Apila verticalmente */
+        align-items: center; /* Centra las tarjetas apiladas */
+         gap: 25px; /* Espacio vertical entre tarjetas */
+    }
+    .plan-card {
+        width: 90%; /* Tarjetas ocupan más ancho */
+        max-width: 350px; /* Pero no más de 350px */
+    }
+}
+
+
+
+
+
+
+
+
+/* ==================================================
+Media Queries
+================================================== */
+
+@media (max-width: 576px) {
+.navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+}
+
+.navbar ul {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.form-container {
+    padding: 15px;
+    max-width: 90%;
+}
+
+.form-title {
+    font-size: 22px;
+}
+
+.main-text {
+    padding: 1rem;
+}
+
+.main-text h1 {
+    font-size: 1.75rem;
+}
+
+.main-text p {
+    font-size: 1rem;
+}
+
+.carousel-container {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.carousel-slide img {
+    width: 50%;
+    height: 50%;
+}
+}
+
+@media (max-width: 576px) {
+.btn-primary,
+.btn-secondary {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+}
+}
+
+@media (max-width: 300px) {
+    footer .container {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+}
+
+
+
+
+
+/* Formulario */
+.form-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 10px auto; 
+    max-width: 400px;
+}
+
+.form-logo img {
+    width: 60px;
+    margin-bottom: 15px;
+}
+
+.form-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #00bfff;
+    outline: none;
+}
+
+.form-group input[type="submit"] {
+    background-color: #00bfff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.form-group input[type="submit"]:hover {
+    background-color: #00bfff;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.input-field:focus {
+    border-color: #00bfff;
+    outline: none;
+}
+
+/* Botón normal (modo claro) */
+.btn-iniciar-sesion {
+    background-color: #00bfff;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: inline-block;
+    transition: background-color 0.3s ease, filter 0.3s ease;
+}
+
+/* Hover modo claro */
+.btn-iniciar-sesion:hover {
+    background-color: #009acd;
+}
+
+
+/* ==================================================
+Modo Oscuro
+================================================== */
+
+.dark-mode .navbar,
+.dark-mode .form-container,
+.dark-mode .carousel-container,
+.dark-mode footer {
+background-color: #1e1e1e;
+color: #020101;
+border-color: #333;
+}
+
+.dark-mode input,
+.dark-mode .input-field {
+background-color: #0f0f0f;
+color: #f0f0f0;
+border: 1px solid #dad4d4;
+}
+
+.dark-mode input:focus,
+.dark-mode .input-field:focus {
+border-color: var(--color-accent);
+}
+
+.dark-mode .btn-primary,
+.dark-mode .btn-secondary {
+background-color: var(--color-accent);
+color: rgb(180, 157, 157);
+}
+
+.dark-mode .navbar a {
+color: #ccbdbd;
+}
+
+.dark-mode .navbar a:hover {
+background-color: var(--color-dark-hover);
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
