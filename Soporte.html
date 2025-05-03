@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,104 +10,110 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
-        darkMode: 'class'
+            darkMode: 'class'
         }
     </script>
 </head>
 
 <!-- Contenido principal -->
-<body class=" flex-col min-h-screen dark:bg-gray-800 text-gray-700 dark:text-gray-100 transition-colors duration-300">
+
+<body class="dark:bg-gray-800 text-gray-700 dark:text-gray-100 transition-colors duration-300">
+
+    <!-- Barra de navegación (Navigation Bar) -->
+    <nav class="flex-row dark:bg-gray-700 shadow-md navbar max-w-7xl mx-auto  items-center py-1 transition-colors">
+            <!-- Logo -->
     
-<!-- Barra de navegación (Navigation Bar) -->
-<nav class=" dark:bg-gray-700 shadow-md navbar max-w-7xl mx-auto  items-center py-1 transition-colors">
-    <div class="flex items-center space-x-6 ">
+                <a href="index.html" class="logo-link">
+                    <img src="Logos/Logo TT.png" alt="Logo" class="w-14">
+                </a>
+            
+            <!-- Links de navegacion -->
+            <ul>
+                <li><a href="index.html" class="hover:text-cyan-900 transition">Inicio</a></li>
+                <li><a href="crea.html" class="hover:text-cyan-800  transition">Crea</a></li>
+                <li><a href="precios.html" class="hover:text-cyan-800 transition">Precios</a></li>
+                <li><a href="soporte.html" class="hover:text-cyan-800 transition">Soporte</a></li>
+            </ul>
 
-    <!-- Logo -->
-    <a href="index.html" class="logo-link">
-        <img src="Logos/Logo TT.png" alt="Logo" class="w-14">
-    </a>
-
-    <!-- Links de navegacion -->
-<ul class=" space-x-6 font-bold-medium ">
-        <div class="left-side"> 
-            <li><a href="index.html" class="hover:text-cyan-900 transition">Inicio</a></li>
-            <li><a href="crea.html" class="hover:text-cyan-800  transition">Crea</a></li>
-            <li><a href="precios.html" class="hover:text-cyan-800 transition">Precios</a></li>
-            <li><a href="soporte.html" class="hover:text-cyan-800 transition">Soporte</a></li>
-    </ul>
-    </div>
-
-    <!-- Botón de iniciar sesión -->
-    <div class="  space-x-7 ">              
-        <a href="Iniciar sesion.html" class="btn-iniciar-sesion bg-cyan-400 text-gray-700 dark:text-gray-700 hover:cyan-700 rounded-md transition  font-bold duration-300">
-        Iniciar sesión
-    </a>
-    <!-- Botón de modo nocturno -->
-    <button id="darkModeToggle" class="px-2 py-2 bg-gray-700 dark:bg-white shadow-lg-white-500 rounded-full hover:bg-gray-900 transition" aria-label="Modo oscuro">
-        
-    </button>
-    </div>
-</nav>
-</header>
-
-<div class="relative w-full mt-20 mx-auto flex justify-center dark:bg-gray-800 ">
-
-    <!-- Contenido principal -->
-    <div class="container w-full flex flex-col items-center justify-center mt-16 px-4">
-        <section class="mt-5 bg-white shadow-lg rounded-lg p-8 text-center max-w-4xl mx-auto flex flex-col items-center justify-center" id="contenido">
-        <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">Centro de Soporte</h2>
-        <p class="text-gray-700 text-lg mb-4 text-center">¿Necesitas ayuda? Encuentra respuestas a tus preguntas o contáctanos.</p>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="bg-gray-100 p-4 rounded-lg">
-                <h3 class="text-xl font-bold text-blue-600">Preguntas Frecuentes</h3>
-                <p class="text-gray-700 mt-2">Consulta nuestras preguntas frecuentes para encontrar soluciones rápidas.</p>
-                <a href="#" class="text-blue-500 mt-2 inline-block">Ver FAQs →</a>
+            <!-- Botón de iniciar sesión -->
+            <div class="btnsContainer">
+                <a href="iniciar sesion.html"
+                    class="btn-iniciar-sesion bg-cyan-400 text-gray-700 dark:text-gray-700 hover:cyan-700 rounded-md transition  font-bold duration-300">
+                    Iniciar sesión
+                </a>
+                <!-- Botón de modo nocturno -->
+                <button id="darkModeToggle"
+                    class="px-2 py-2 bg-gray-700 dark:bg-white shadow-lg-white-500 rounded-full hover:bg-gray-900 transition"
+                    aria-label="Modo oscuro">
+                </button>
             </div>
-            <div class="bg-gray-100 p-4 rounded-lg">
-                <h3 class="text-xl font-bold text-blue-600">Contacto</h3>
-                <p class="text-gray-700 mt-2">Si no encuentras la respuesta que buscas, envíanos un mensaje.</p>
-                <a href="#" class="text-blue-500 mt-2 inline-block">Contactar Soporte →</a>
-            </div>
-        </div>
-    </main>
-</section>
+    </nav>
 
 
-<!-- Pie de página -->
-<footer class="mt-10 p-4 text-gray-600">
-    <p>&copy; 2025 TalentTag. Todos los derechos reservados.</p>
-</footer>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
+    <div class="relative w-full mt-20 mx-auto flex justify-center dark:bg-gray-800 ">
 
-        // ==== MODO OSCURO ====
-        const toggleBtn = document.getElementById('darkModeToggle');
-        const html = document.documentElement;
+        <!-- Contenido principal -->
+        <div class="container w-full flex flex-col items-center justify-center mt-16 px-4">
+            <section
+                class="mt-5 bg-white shadow-lg rounded-lg p-8 text-center max-w-4xl mx-auto flex flex-col items-center justify-center"
+                id="contenido">
+                <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">Centro de Soporte</h2>
+                <p class="text-gray-700 text-lg mb-4 text-center">¿Necesitas ayuda? Encuentra respuestas a tus preguntas
+                    o contáctanos.</p>
 
-        // Cargar preferencia del usuario
-        const themeGuardado = localStorage.getItem("theme");
-        if (themeGuardado === "dark") {
-            html.classList.add("dark");
-        }
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-gray-100 p-4 rounded-lg">
+                        <h3 class="text-xl font-bold text-blue-600">Preguntas Frecuentes</h3>
+                        <p class="text-gray-700 mt-2">Consulta nuestras preguntas frecuentes para encontrar soluciones
+                            rápidas.</p>
+                        <a href="#" class="text-blue-500 mt-2 inline-block">Ver FAQs →</a>
+                    </div>
+                    <div class="bg-gray-100 p-4 rounded-lg">
+                        <h3 class="text-xl font-bold text-blue-600">Contacto</h3>
+                        <p class="text-gray-700 mt-2">Si no encuentras la respuesta que buscas, envíanos un mensaje.</p>
+                        <a href="#" class="text-blue-500 mt-2 inline-block">Contactar Soporte →</a>
+                    </div>
+                </div>
+                </main>
+            </section>
 
-        // Función para actualizar el icono del botón
-        function actualizarIcono() {
-            toggleBtn.textContent = html.classList.contains('dark') ? '🌞' : '🌙';
-        }
 
-        actualizarIcono(); // Al iniciar
+            <!-- Pie de página -->
+            <footer class="mt-10 p-4 text-gray-600">
+                <p>&copy; 2025 TalentTag. Todos los derechos reservados.</p>
+            </footer>
 
-        // Evento de clic
-        toggleBtn.addEventListener("click", () => {
-            html.classList.toggle("dark");
-            const nuevoTema = html.classList.contains("dark") ? "dark" : "light";
-            localStorage.setItem("theme", nuevoTema);
-            actualizarIcono();
-        });
-    });
-</script>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+
+                    // ==== MODO OSCURO ====
+                    const toggleBtn = document.getElementById('darkModeToggle');
+                    const html = document.documentElement;
+
+                    // Cargar preferencia del usuario
+                    const themeGuardado = localStorage.getItem("theme");
+                    if (themeGuardado === "dark") {
+                        html.classList.add("dark");
+                    }
+
+                    // Función para actualizar el icono del botón
+                    function actualizarIcono() {
+                        toggleBtn.textContent = html.classList.contains('dark') ? '🌞' : '🌙';
+                    }
+
+                    actualizarIcono(); // Al iniciar
+
+                    // Evento de clic
+                    toggleBtn.addEventListener("click", () => {
+                        html.classList.toggle("dark");
+                        const nuevoTema = html.classList.contains("dark") ? "dark" : "light";
+                        localStorage.setItem("theme", nuevoTema);
+                        actualizarIcono();
+                    });
+                });
+            </script>
 
 </body>
+
 </html>

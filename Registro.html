@@ -18,36 +18,35 @@
 <body class=" flex-col min-h-screen dark:bg-gray-800 text-gray-700 dark:text-gray-100 transition-colors duration-300">
     
 <!-- Barra de navegación (Navigation Bar) -->
-<nav class=" dark:bg-gray-700 shadow-md navbar max-w-7xl mx-auto  items-center py-1 transition-colors">
-    <div class="flex items-center space-x-6 ">
-
+    <nav class="flex-row dark:bg-gray-700 shadow-md navbar max-w-7xl mx-auto  items-center py-1 transition-colors">
     <!-- Logo -->
-    <a href="index.html" class="logo-link">
-        <img src="Logos/Logo TT.png" alt="Logo" class="w-14">
-    </a>
 
+        <a href="index.html" class="logo-link">
+            <img src="Logos/Logo TT.png" alt="Logo" class="w-14">
+        </a>
+    
     <!-- Links de navegacion -->
-<ul class=" space-x-6 font-bold-medium ">
-        <div class="left-side"> 
-            <li><a href="index.html" class="hover:text-cyan-900 transition">Inicio</a></li>
-            <li><a href="crea.html" class="hover:text-cyan-800  transition">Crea</a></li>
-            <li><a href="precios.html" class="hover:text-cyan-800 transition">Precios</a></li>
-            <li><a href="soporte.html" class="hover:text-cyan-800 transition">Soporte</a></li>
+    <ul>
+        <li><a href="index.html" class="hover:text-cyan-900 transition">Inicio</a></li>
+        <li><a href="crea.html" class="hover:text-cyan-800  transition">Crea</a></li>
+        <li><a href="precios.html" class="hover:text-cyan-800 transition">Precios</a></li>
+        <li><a href="soporte.html" class="hover:text-cyan-800 transition">Soporte</a></li>
     </ul>
-    </div>
 
     <!-- Botón de iniciar sesión -->
-    <div class="  space-x-7 ">              
-        <a href="Iniciar sesion.html" class="btn-iniciar-sesion bg-cyan-400 text-gray-700 dark:text-gray-700 hover:cyan-700 rounded-md transition  font-bold duration-300">
-        Iniciar sesión
-    </a>
-    <!-- Botón de modo nocturno -->
-    <button id="darkModeToggle" class="px-2 py-2 bg-gray-700 dark:bg-white shadow-lg-white-500 rounded-full hover:bg-gray-900 transition" aria-label="Modo oscuro">
-        
-    </button>
+    <div class="btnsContainer">
+        <a href="iniciar sesion.html"
+            class="btn-iniciar-sesion bg-cyan-400 text-gray-700 dark:text-gray-700 hover:cyan-700 rounded-md transition  font-bold duration-300">
+            Iniciar sesión
+        </a>
+        <!-- Botón de modo nocturno -->
+        <button id="darkModeToggle"
+            class="px-2 py-2 bg-gray-700 dark:bg-white shadow-lg-white-500 rounded-full hover:bg-gray-900 transition"
+            aria-label="Modo oscuro">
+        </button>
     </div>
-</nav>
-</header>
+    </nav>
+
 
     <!-- Contenido principal -->
     
