@@ -15,7 +15,7 @@
 </head>
 
 <!-- Contenido principal -->
-<body class=" flex-col min-h-screen dark:bg-gray-800 text-gray-700 dark:text-gray-100 transition-colors duration-300">
+<body class=" flex-col min-h-screen dark:bg-gray-800 text-gray-700 dark:text-gray-100 transition-colors duration-300 ">
     
 <!-- Barra de navegación (Navigation Bar) -->
 <nav class="flex-row dark:bg-gray-700 shadow-md navbar max-w-7xl mx-auto  items-center py-1 transition-colors">
@@ -51,34 +51,66 @@
 
     <!-- Contenido principal -->
      
-    <main class="container mx-auto mt-5 px-4">
-    <h1 class="text-3xl font-bold text-center">Selecciona una Plantilla</h1>
-    <p class="mt-8 text-center text-gray-700">Elige entre diseños para <strong>Comunicaciones</strong> o <strong>Sistemas</strong> y crea un portafolio que se ajuste a tu perfil.</p>
+    <main class="container mx-auto mt-24 px-4 max-w-7xl">
+        <h1 class="text-3xl font-bold text-center">Selecciona una Plantilla</h1>
+        <p class="mt-8 text-center text-gray-700">Elige entre diseños para <strong>Comunicaciones</strong> o <strong>Sistemas</strong> y crea un portafolio que se ajuste a tu perfil.</p>
 
-    <!-- Sección de plantillas -->
-    <div class="flex flex-col md:flex-row gap-8 mt-8 justify-center">
-        <!-- Plantilla Comunicaciones -->
-        <div class="plantilla bg-white shadow-md rounded-lg p-4 w-full md:w-1/2">
-        <h2 class="text-xl font-bold mb-2 text-blue-600">Plantilla para Comunicaciones</h2>
-        <img src="plantillas/comunicaciones.jpg" alt="Plantilla Comunicaciones" class="rounded-lg shadow-md w-full">
-        <p class="mt-2 text-gray-700">Diseño moderno y creativo para profesionales de comunicaciones.</p>
-        <button class="btn-primary mt-4 w-full">Seleccionar</button>
+        <!-- Sección de plantillas -->
+        <div class="flex flex-col md:flex-row gap-8 mt-8 justify-center">
+            <!-- Plantilla Comunicaciones -->
+            <div class="plantilla bg-white flex flex-col items-center gap-4 shadow-md rounded-lg p-4 w-full md:w-1/2">
+                <h2 class="text-xl font-bold mb-2 text-blue-600">Plantilla para Comunicaciones</h2>
+                <img src="./Imagenes/comunicaciones.webp" alt="Plantilla Comunicaciones" class="rounded-lg max-w-[250px] p-4">
+                <p class="mt-2 text-gray-700">Diseño moderno y creativo para profesionales de comunicaciones.</p>
+                <button class="btn-primary mt-4 w-full ">Seleccionar</button>
+            </div>
+
+
+            <div class="plantilla bg-white flex justify-between flex-col items-center gap-4 shadow-md rounded-lg p-4 w-full md:w-1/2">
+                <h2 class="text-xl font-bold mb-2 text-blue-600">Plantilla para Sistemas</h2>
+                <img src="./Imagenes/sitemas.webp" alt="Plantilla Comunicaciones" class="rounded-lg max-w-[250px] p-4">
+                <p class="mt-2 text-gray-700">Diseño profesional y funcional para ingenieros y desarrolladores.</p>
+                <button class="btn-primary mt-4 w-full">Seleccionar</button>
+            </div>
+            <!-- Plantilla Sistemas -->
         </div>
-        <!-- Plantilla Sistemas -->
-        <div class="plantilla bg-white shadow-md rounded-lg p-4 w-full md:w-1/2">
-        <h2 class="text-xl font-bold mb-2">Plantilla para Sistemas</h2>
-        <img src="plantillas/sistemas.jpg" alt="Plantilla Sistemas" class="rounded-lg shadow-md w-full">
-        <p class="mt-2 text-gray-700">Diseño profesional y funcional para ingenieros y desarrolladores.</p>
-        <button class="btn-primary mt-4 w-full">Seleccionar</button>
-        </div>
-    </div>
     </main>
 
 
 </section>
 <!-- Pie de página -->
-<footer class="mt-10 p-4 text-gray-600">
-    <p>&copy; 2025 TalentTag. Todos los derechos reservados.</p>
+<footer class="mt-10 p-4 text-gray-600 mx-auto w-full">
+    <p class="text-center">&copy; 2025 TalentTag. Todos los derechos reservados.</p>
 </footer>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+        // ==== MODO OSCURO ====
+        const toggleBtn = document.getElementById('darkModeToggle');
+        const html = document.documentElement;
+
+        // Cargar preferencia del usuario
+        const themeGuardado = localStorage.getItem("theme");
+        if (themeGuardado === "dark") {
+            html.classList.add("dark");
+        }
+
+        // Función para actualizar el icono del botón
+        function actualizarIcono() {
+            toggleBtn.textContent = html.classList.contains('dark') ? '🌞' : '🌙';
+        }
+
+        actualizarIcono(); // Al iniciar
+
+        // Evento de clic
+        toggleBtn.addEventListener("click", () => {
+            html.classList.toggle("dark");
+            const nuevoTema = html.classList.contains("dark") ? "dark" : "light";
+            localStorage.setItem("theme", nuevoTema);
+            actualizarIcono();
+        });
+    });
+</script>
+
 </body>
 </html>
